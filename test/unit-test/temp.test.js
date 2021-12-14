@@ -1,6 +1,6 @@
 const chai = require('chai')
 const { expect } = chai;
-const { runQuery, mutationQuery } = require('./helper')
+const { runQuery, mutationQuery } = require('../helper')
 
 describe("Filter function", () => {
   it("get all user data", async () => {
@@ -49,6 +49,4 @@ describe("Filter function", () => {
     const gqlRequestData = await mutationQuery(header, queryData);
     expect(gqlRequestData.data.loginUser.status.code).to.equal(1000);
   });
-
-  
 });

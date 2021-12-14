@@ -7,7 +7,7 @@
     "migrate": "sequelize db:migrate",
     "dev": "nodemon src/server --exec babel-node -e js",
     "start": "node src/server",
-    "test": "jest --watchAll --detectOpenHandles"
+    "test": "jest --coverage --watchAll --testPathPattern=test/unit-test --detectOpenHandles"
   },
   "keywords": [
     "graphql",
