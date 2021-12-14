@@ -10,6 +10,16 @@ async function runQuery(headers,gqlRequest){
   });
   return gqlRequests
 }
+
+async function mutationQuery(headers,gqlRequest){
+  const server = createServer();
+  const { mutate } =  createTestClient(server);
+  const gqlRequests = await mutate({
+    query :gql`${gqlRequest}`
+  });
+  return gqlRequests
+}
 module.exports ={
-  runQuery
+  runQuery,
+  mutationQuery
 }

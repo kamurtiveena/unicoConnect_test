@@ -9,12 +9,7 @@ const { gql } = require('apollo-server');
 // https://www.apollographql.com/docs/apollo-server/getting-started/
 
 const createServerSimple = () => {
-  // graphql schema definition
-
-  // The ApolloServer constructor
   const server = new ApolloServer({ typeDefs, resolvers });
-
-  // we don't run server.listen() here. The server is not yet started.
   return server;
 };
 

@@ -9,7 +9,6 @@ let loginUser = async (parent, args, context, info) => {
     logger.info('loginUser resolver called');
     let requireParam = ['email','password'];
     let missingParam = await checkRequiredMissingParam(args,requireParam);
-    console.log(missingParam)
     if(missingParam){
       return {
         status: codeConstant.error,
@@ -27,7 +26,6 @@ let loginUser = async (parent, args, context, info) => {
         }
       }
     }
-    console.log(user)
     const isValid = await bcrypt.compare(args.password, user.dataValues.password);
     if (!isValid) {
       return {
@@ -37,7 +35,6 @@ let loginUser = async (parent, args, context, info) => {
         }
       }
     }
-    console.log(isValid)
     const token = jsonwebtoken.sign(
       { id: user.dataValues.id, email: user.dataValues.email },
       process.env.JWT_SECRET,
@@ -62,7 +59,6 @@ let loginUser = async (parent, args, context, info) => {
       }
     }
   } catch (error) {
-    console.log(error);
     logger.error(error);
     return {
       status: codeConstant.error,

@@ -7,14 +7,14 @@
     "migrate": "sequelize db:migrate",
     "dev": "nodemon src/server --exec babel-node -e js",
     "start": "node src/server",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll --detectOpenHandles"
   },
   "keywords": [
     "graphql",
     "authentication",
     "apollo"
   ],
-  "author": "Umoren Samuel",
+  "author": "Vinod khetade",
   "license": "ISC",
   "dependencies": {
     "apollo-server": "^2.17.0",

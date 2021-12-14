@@ -47,7 +47,6 @@ let registerUser = async (parent, args, context, info) => {
     }
 
   } catch (error) {
-    console.log(error)
     logger.error(error);
     return {
       status: codeConstant.error,

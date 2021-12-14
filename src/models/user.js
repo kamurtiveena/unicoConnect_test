@@ -32,7 +32,6 @@ module.exports = function(sequelize, DataTypes) {
 
     classMethods: {
       associate: function(models) {
-        console.log('===========user',models);
         Users.hasMany(models.addStudentDetails, {
           foreignKey: 'UserId',
           onDelete: 'CASCADE'
